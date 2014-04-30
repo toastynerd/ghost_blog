@@ -40,3 +40,5 @@ config = {
     contentPath: path.join(__dirname, '/content/')
   }
 }
+
+module.exports = config;
