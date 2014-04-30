@@ -4,7 +4,7 @@ var path = require('path'),
 
 config = {
   production: {
-    url: 'http://toasty-blog.herokuapp.com',
+    url: 'http://www.toastynerd.com',
     mail: {},
     database: {
       client: 'pg',
