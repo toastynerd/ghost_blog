@@ -1,3 +1,4 @@
+/* jshint indent:2 */
 var path = require('path'),
     config;
 
@@ -6,7 +7,7 @@ config = {
     url: 'http://toasty-blog.herokuapp.com',
     mail: {},
     database: {
-      client: 'postgres',
+      client: 'pg',
       connection: {
         host: process.env.POSTGRES_URL,
         user: process.env.POSTGRES_USER,
@@ -21,9 +22,9 @@ config = {
     }
   },
   development: {
-    url: 'http://toasty-blog.herokuapp.com',
+    url: 'http://127.0.0.1:3000',
     database: {
-      client: 'postgres',
+      client: 'pg',
       connection: {
         host: 'localhost',
         user: 'toasty_blog',
@@ -31,7 +32,7 @@ config = {
       }
     },
     server: {
-      host: '0.0.0.0',
+      host: '127.0.0.1',
       port: '3000'
     }
   }
