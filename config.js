@@ -1,20 +1,18 @@
-'use strict';
-
 var path = require('path'),
     config;
 
 config = {
   production: {
-    url: 'http://toasty_blog.herokuapp.com',
+    url: 'http://toasty-blog.herokuapp.com',
     mail: {},
     database: {
       client: 'postgres',
       connection: {
-        host: process.env.DATABASE_URL,
-        user: process.env.DATABASE_USER,
-        password: process.env.DATABASE_PASSWORD,
-        database: process.env.DATABASE_NAME,
-        port: process.env.DATABASE_PORT
+        host: process.env.POSTGRES_URL,
+        user: process.env.POSTGRES_USER,
+        password: process.env.POSTGRES_PASSWORD,
+        database: process.env.POSTGRES_NAME,
+        port: process.env.POSTGRES_PORT
       }
     },
     server: {
@@ -23,22 +21,20 @@ config = {
     }
   },
   development: {
-    url: 'http://localhost:3000'
-  },
-  database: {
-    client: 'sqlite3',
-    connection: {
-      filename: path.join(__dirname, 'content/data/ghost-dev.db')
+    url: 'http://toasty-blog.herokuapp.com',
+    database: {
+      client: 'postgres',
+      connection: {
+        host: 'localhost',
+        user: 'toasty_blog',
+        database: 'toast_blog_dev'
+      }
     },
-    debug: false
-  },
-  server: {
-    host: '127.0.0.1',
-    port: '3000'
-  },
-  paths: {
-    contentPath: path.join(__dirname, '/content/')
+    server: {
+      host: '0.0.0.0',
+      port: '3000'
+    }
   }
-}
+};
 
 module.exports = config;
