@@ -26,7 +26,7 @@ config = {
         service: 'Mailgun',
         auth: {
           user: process.env.MAILGUN_SMTP_LOGIN,
-          password: process.env.MAILGUN_SMTP_PASSWORD
+          pass: process.env.MAILGUN_SMTP_PASSWORD
         }
       }
     }
