@@ -19,8 +19,19 @@ config = {
     server: {
       host: '0.0.0.0',
       port: process.env.PORT
+    },
+    mail : {
+      transport: 'SMTP',
+      options: {
+        service: 'Mailgun',
+        auth: {
+          user: process.env.MAILGUN_SMTP_LOGIN,
+          password: process.env.MAILGUN_SMTP_PASSWORD
+        }
+      }
     }
   },
+
   development: {
     url: 'http://127.0.0.1:3000',
     database: {
@@ -28,7 +39,7 @@ config = {
       connection: {
         host: 'localhost',
         user: 'toasty_blog',
-        database: 'toast_blog_dev'
+        database: 'toasty_blog_dev'
       }
     },
     server: {
